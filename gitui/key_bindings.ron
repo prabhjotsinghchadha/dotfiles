@@ -8,4 +8,6 @@
     move_right: Some(( code: Char('l'), modifiers: ( bits: 0,),)),
     move_up: Some(( code: Char('k'), modifiers: ( bits: 0,),)),
     move_down: Some(( code: Char('j'), modifiers: ( bits: 0,),)),
+
+    open_help: Some(( code: Char('H'), modifiers: ( bits: 0,),)),
 )
