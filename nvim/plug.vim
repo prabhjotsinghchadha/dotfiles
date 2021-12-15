@@ -26,6 +26,10 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
+  Plug 'jremmen/vim-ripgrep'
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-utils/vim-man'
+  Plug 'ycm-core/YouCompleteMe'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
