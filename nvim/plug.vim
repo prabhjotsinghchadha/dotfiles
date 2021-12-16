@@ -29,7 +29,6 @@ if has("nvim")
   Plug 'jremmen/vim-ripgrep'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-utils/vim-man'
-  Plug 'ycm-core/YouCompleteMe'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
