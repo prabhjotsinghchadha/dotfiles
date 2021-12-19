@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "create-react-app": "^5.0.0",
     "diagnostic-languageserver": "^1.14.1"
   }
 }

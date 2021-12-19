@@ -26,13 +26,28 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
-  Plug 'jremmen/vim-ripgrep'
-  Plug 'tpope/vim-fugitive'
-  Plug 'vim-utils/vim-man'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'yaml', 'html'] }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'townk/vim-autoclose'
+Plug 'luochen1990/rainbow'
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-react-snippets'
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
+
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
