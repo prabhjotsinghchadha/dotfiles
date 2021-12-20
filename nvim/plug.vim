@@ -29,21 +29,21 @@ if has("nvim")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
+Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'vim-utils/vim-man'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'yaml', 'html'] }
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'townk/vim-autoclose'
 Plug 'luochen1990/rainbow'
 Plug 'SirVer/ultisnips'
 Plug 'epilande/vim-react-snippets'
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-
-Plug 'pangloss/vim-javascript'
+Plug 'chemzqm/vim-jsx-improve'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }

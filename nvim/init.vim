@@ -136,9 +136,11 @@ if exists("&termguicolors") && exists("&winblend")
   set pumblend=5
   set background=dark
   " Use NeoSolarized
-  let g:neosolarized_termtrans=1
-  runtime ./colors/NeoSolarized.vim
-  colorscheme NeoSolarized
+  "let g:neosolarized_termtrans=1
+  "runtime ./colors/NeoSolarized.vim
+  "colorscheme NeoSolarized
+  colorscheme embark
+  let g:embark_terminal_italics = 1
 endif
 
 "}}}
