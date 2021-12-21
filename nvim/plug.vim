@@ -34,6 +34,7 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh
 let g:LanguageClient_rootMarkers = {'javascript': ['.flowconfig', 'package.json']}
 let g:LanguageClient_serverCommands={'javascript': ['flow', 'lsp'],   'javascript.jsx': ['flow', 'lsp']}
 
+Plug 'w0rp/ale'
 Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }

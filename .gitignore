@@ -60,9 +60,13 @@ Pods/
 .atom/compile-cache
 .atom/storage
 
+configstore
+htop
+
 # Fish local config
 .config/fish/config-local.fish
 .config/fish/fish_variables.x86_64
 fish_variables
+.config/fish/fish_variables
 # Karabiner
 .config/karabiner/automatic_backups
