@@ -33,6 +33,10 @@ Session.vim
 .vim/syntax/Dockerfile.vim
 .vim/snippets/
 
+coc
+.DS_Store
+karabiner
+
 # Xcode
 build/
 *.pbxuser

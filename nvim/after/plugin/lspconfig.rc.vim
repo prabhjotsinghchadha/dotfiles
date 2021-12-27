@@ -43,7 +43,7 @@ local on_attach = function(client, bufnr)
 
   -- formatting
   if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_formatting = true
   end
 
   if client.resolved_capabilities.document_formatting then
@@ -55,33 +55,34 @@ local on_attach = function(client, bufnr)
 
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    '', -- Field
-    '', -- Variable
-    '', -- Class
-    'ﰮ', -- Interface
-    '', -- Module
-    '', -- Property
-    '', -- Unit
-    '', -- Value
-    '', -- Enum
-    '', -- Keyword
-    '﬌', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    '', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    '', -- Struct
-    '', -- Event
-    'ﬦ', -- Operator
-    '', -- TypeParameter
+    '?', -- Text
+    '?', -- Method
+    '?', -- Function
+    '?', -- Constructor
+    '?', -- Field
+    '?', -- Variable
+    '?', -- Class
+    '?', -- Interface
+    '?', -- Module
+    '?', -- Property
+    '?', -- Unit
+    '?', -- Value
+    '?', -- Enum
+    '?', -- Keyword
+    '?', -- Snippet
+    '?', -- Color
+    '?', -- File
+    '?', -- Reference
+    '?', -- Folder
+    '?', -- EnumMember
+    '?', -- Constant
+    '?', -- Struct
+    '?', -- Event
+    '?', -- Operator
+    '?', -- TypeParameter
   }
 end
+
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
@@ -90,7 +91,6 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
 
@@ -99,7 +99,6 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
-
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -169,7 +168,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
       spacing = 4,
-      prefix = ''
+      prefix = '?'
     }
   }
 )

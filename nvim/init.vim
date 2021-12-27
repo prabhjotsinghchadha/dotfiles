@@ -9,7 +9,7 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 set nocompatible
-set number
+set relativenumber
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
@@ -21,7 +21,7 @@ set hlsearch
 set showcmd
 set cmdheight=1
 set laststatus=2
-set scrolloff=10
+set scrolloff=40
 set expandtab
 "let loaded_matchparen = 1
 set shell=fish
@@ -86,14 +86,29 @@ if &term =~ "screen"
   autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
 endif
 
-let g:ale_fixers = {
- \ 'javascript': ['eslint']
- \ }
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-let g:ale_fix_on_save = 1
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:ale_fixers = {
+" \ 'javascript': ['eslint']
+" \ }
+"let g:ale_sign_error = '❌'
+"let g:ale_sign_warning = '⚠️'
+"let g:ale_fix_on_save = 1
+"let g:syntastic_javascript_checkers = ['eslint']
+""show hidden files
+let g:NERDTreeShowHidden=1
+
 "}}}
+
+"Visual Marker Settings 
+"{{{
+" ---------------------------------------------------------------------
+""
+    let g:VM_mouse_mappings    = 1
+    let g:VM_theme             = 'iceblue'
+
+    let g:VM_maps = {}
+    let g:VM_maps["Undo"]      = 'u'
+    let g:VM_maps["Redo"]      = '<C-r>'
+"  }}}
 
 " File types "{{{
 " ---------------------------------------------------------------------

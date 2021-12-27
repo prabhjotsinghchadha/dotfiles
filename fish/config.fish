@@ -22,7 +22,7 @@ set -gx EDITOR nvim
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
-
+set -gx PATH "$HOME/.cargo/bin" $PATH
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
 
@@ -48,7 +48,6 @@ switch (uname)
   case '*'
     source (dirname (status --current-filename))/config-windows.fish
 end
-
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
