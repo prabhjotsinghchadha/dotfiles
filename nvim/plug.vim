@@ -26,12 +26,11 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sudormrfbin/cheatsheet.nvim'
 endif
 
 " Plug 'w0rp/ale'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'vim-utils/vim-man'
@@ -45,6 +44,10 @@ Plug 'machakann/vim-sandwich'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/Colorizer'
 Plug 'fladson/vim-kitty'
+Plug 'morhetz/gruvbox'
+Plug 'ThePrimeagen/vim-be-good'
+Plug 'rust-lang/rust.vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

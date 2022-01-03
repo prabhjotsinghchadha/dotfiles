@@ -10,12 +10,31 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 # aliases
+alias l "ls -lah"
 alias ls "ls -p -G"
-alias la "ls -A"
-alias ll "ls -l"
+alias la "ls -lAh"
+alias ll "ls -lh"
 alias lla "ll -A"
 alias g git
+alias ng 'npm init -y && git init && echo "node_modules" >> .gitignore'
+alias vc 'nvim ~/.config/nvim/init.vim'
+alias vp 'nvim ~/.config/nvim/plug.vim'
+alias zp 'nvim ~/.zshrc'
+alias fco 'nvim ~/.config/fish/config.fish'
+alias zrc 'nvim ~/.zshrc'
+alias exaf 'exa -allFI "node_modules|.git|coverage"'
+alias xg 'exa -a --long --git --group-directories-first --no-permissions --no-user --icons -FI "node_modules|.git|coverage|.DS_Store|.vscode"'
+alias exg 'exa -a --long --git --group-directories-first --no-permissions --no-user --icons -FI "node_modules|.git|coverage|.DS_Store|.vscode"'
+alias exag 'exa -a --long --git --group-directories-first --no-permissions --no-user --icons -FI "node_modules|.git|coverage|.DS_Store|.vscode"'
+alias exal 'exa -allI "node_modules|.git|coverage"'
+alias xl 'exa -allI "node_modules|.git|coverage"'
+alias exat 'exa -aTI "node_modules|.git|coverage"'
+alias cfg 'cd ~/.config'
+alias c 'cargo'
+alias cpwd 'pwd|pbcopy'
+alias vac 'nvim ~/.config/alacritty/alacritty.yml'
 command -qv nvim && alias vim nvim
+
 
 set -gx EDITOR nvim
 

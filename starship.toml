@@ -1,0 +1,143 @@
+add_newline = true
+
+format = "$all"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+discharging_symbol = "💦"
+
+[[battery.display]]
+threshold = 60
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[character]
+success_symbol ="[➜](bold green) "
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green) "
+
+[cmd_duration]
+min_time = 500
+format = "underwent [$duration](bold yellow)"
+
+[directory]
+home_symbol = "~"
+truncation_length = 3
+truncation_symbol = "~/"
+truncate_to_repo = true
+read_only = "🔒"
+read_only_style = "red"
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+disabled = false
+
+#[env_var]
+#variable = "SHELL"
+#default = "Zsh"
+
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 8
+truncation_symbol = "..."
+style = "bold purple"
+disabled = false
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑 "
+
+#[[git_status.count]]
+#disable = false
+
+[hostname]
+ssh_only = false
+style = "bold dimmed green"
+format =  "on [$hostname](bold red) ($style) in "
+trim_at = "."
+disabled = true
+
+#[jobs]
+#symbol = "+ "
+#number_threshold = 0
+#symbol_threshold = 0
+
+[line_break]
+disabled = false
+
+[memory_usage]
+disabled = false
+format = "via $symbol [${ram_pct}( ${ram})]($style) "
+threshold = 70
+symbol = ""
+style = "bold dimmed white"
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
+
+[package]
+symbol = "📦 "
+style = "bold red"
+disabled = false
+
+[python]
+symbol = "👾 "
+pyenv_version_name = true
+
+[rust]
+format = "via [⚙️ $version](red bold)"
+symbol = "🦀 "
+
+[sudo]
+style = "bold green"
+symbol = "🧑🏻‍💻"
+disabled = false
+
+[time]
+format = '🕙[\[$time\]]($style) '
+time_format = "%I:%M"
+use_12hr = true
+utc_time_offset = "local"
+style = "bold yellow"
+disabled = false
+
+[username]
+format = "user: [$user]($style) "
+style_root = "bold red"
+style_user = "bold yellow"
+show_always = false
+disabled = false
