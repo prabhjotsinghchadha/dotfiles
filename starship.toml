@@ -1,6 +1,15 @@
 add_newline = true
 
-format = "$all"
+format = """
+$all\
+"""
+right_format = """
+$time\
+$battery\
+$memory_usage\
+$docker_context\
+"""
+
 
 [battery]
 full_symbol = "🔋"
@@ -48,9 +57,17 @@ disabled = false
 #variable = "SHELL"
 #default = "Zsh"
 
+[docker_context]
+format = "via [$symbol$context]($style) "
+symbol = "🐳 "
+only_with_files = true
+detect_extensions = []
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+style = "blue bold"
+disabled = false
 
 [git_branch]
-symbol = "🌱 "
+symbol = " "
 truncation_length = 8
 truncation_symbol = "..."
 style = "bold purple"
@@ -71,9 +88,12 @@ cherry_pick = "[🍒 PICKING](bold red)"
 
 [git_status]
 conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
+#ahead = "🏎💨"
+#behind = "😰"
+#diverged = "😵"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
 untracked = "🤷‍"
 stashed = "📦"
 modified = "📝"
@@ -97,7 +117,7 @@ disabled = true
 #symbol_threshold = 0
 
 [line_break]
-disabled = false
+disabled = true 
 
 [memory_usage]
 disabled = false

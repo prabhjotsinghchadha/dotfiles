@@ -88,8 +88,7 @@ endif
 
 "}}}
 
-"Visual Marker Settings 
-"{{{
+"{{{ Visual Marker Settings
 " ---------------------------------------------------------------------
 ""
     let g:VM_mouse_mappings    = 1
@@ -151,7 +150,7 @@ if exists("&termguicolors") && exists("&winblend")
   "let g:neosolarized_termtrans=1
   "runtime ./colors/NeoSolarized.vim
   "colorscheme NeoSolarized
-  colorscheme gruvbox
+  colorscheme embark
   let g:embark_terminal_italics = 1
 endif
 

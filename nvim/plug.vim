@@ -1,5 +1,7 @@
 if has("nvim")
   let g:plug_home = stdpath('data') . '/plugged'
+  let g:neoformat_try_node_exe = 1
+  let g:neoformat_try_formatprg = 1
 endif
 
 call plug#begin()
@@ -27,11 +29,14 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'sudormrfbin/cheatsheet.nvim'
+  Plug 'b0o/SchemaStore.nvim'
+  Plug 'sbdchd/neoformat' 
 endif
 
 " Plug 'w0rp/ale'
 " Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
+Plug 'ayu-theme/ayu-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'vim-utils/vim-man'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -48,6 +53,5 @@ Plug 'morhetz/gruvbox'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'rust-lang/rust.vim'
 Plug 'ryanoasis/vim-devicons'
-
 call plug#end()
 

@@ -42,9 +42,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- formatting
-  if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = true
-  end
+ --if client.name == 'tsserver' then
+   -- client.resolved_capabilities.document_formatting = true
+  --end
 
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -93,6 +93,63 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 --  on_attach = on_attach,
 --  capabilities = capabilities
 --}
+
+nvim_lsp.jsonls.setup{
+cmd = {"vscode-json-language-server", "--stdio"},
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"json", "jsonc"},
+  settings = {
+    json = {
+      -- Schemas https://www.schemastore.org
+      schemas = {
+        {
+          fileMatch = {"package.json"},
+          url = "https://json.schemastore.org/package.json"
+        },
+        {fileMatch={"manifest.json", "manifest.webmanifest"},
+          url="https://json.schemastore.org/web-manifest-combined.json"
+        },
+        {
+          fileMatch = {"tsconfig*.json"},
+          url = "https://json.schemastore.org/tsconfig.json"
+        },
+        {
+          fileMatch = {
+            ".prettierrc",
+            ".prettierrc.json",
+            "prettier.config.json"
+          },
+          url = "https://json.schemastore.org/prettierrc.json"
+        },
+        {
+          fileMatch = {".eslintrc", ".eslintrc.json"},
+          url = "https://json.schemastore.org/eslintrc.json"
+        },
+        {
+          fileMatch = {".babelrc", ".babelrc.json", "babel.config.json"},
+          url = "https://json.schemastore.org/babelrc.json"
+        },
+        {
+          fileMatch = {"lerna.json"},
+          url = "https://json.schemastore.org/lerna.json"
+        },
+        {
+          fileMatch = {"now.json", "vercel.json"},
+          url = "https://json.schemastore.org/now.json"
+        },
+        {
+          fileMatch = {
+            ".stylelintrc",
+            ".stylelintrc.json",
+            "stylelint.config.json"
+          },
+          url = "http://json.schemastore.org/stylelintrc.json"
+        }
+      }
+    }
+  }
+}
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -160,6 +217,24 @@ nvim_lsp.diagnosticls.setup {
     }
   }
 }
+
+nvim_lsp.rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

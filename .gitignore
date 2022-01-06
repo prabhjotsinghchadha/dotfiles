@@ -32,6 +32,7 @@ Session.vim
 .vim/ftdetect/Dockerfile.vim
 .vim/syntax/Dockerfile.vim
 .vim/snippets/
+bpytop
 
 coc
 .DS_Store
@@ -64,6 +65,8 @@ Pods/
 .atom/compile-cache
 .atom/storage
 
+.gitconfig
+gh
 configstore
 htop
 
