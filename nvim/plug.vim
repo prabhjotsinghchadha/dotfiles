@@ -8,6 +8,7 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -18,8 +19,12 @@ if has("nvim")
   Plug 'tami5/lspsaga.nvim'
   Plug 'folke/lsp-colors.nvim'
   Plug 'L3MON4D3/LuaSnip'
+  Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'rafamadriz/friendly-snippets'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'kyazdani42/nvim-web-devicons'
@@ -43,10 +48,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'townk/vim-autoclose'
 Plug 'luochen1990/rainbow'
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
-Plug 'honza/vim-snippets'
 Plug 'chrisbra/Colorizer'
 Plug 'fladson/vim-kitty'
 Plug 'morhetz/gruvbox'
