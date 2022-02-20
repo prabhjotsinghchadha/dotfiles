@@ -55,31 +55,31 @@ local on_attach = function(client, bufnr)
 
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
-    '?', -- Text
-    '?', -- Method
-    '?', -- Function
-    '?', -- Constructor
-    '?', -- Field
-    '?', -- Variable
-    '?', -- Class
-    '?', -- Interface
-    '?', -- Module
-    '?', -- Property
-    '?', -- Unit
-    '?', -- Value
-    '?', -- Enum
-    '?', -- Keyword
-    '?', -- Snippet
-    '?', -- Color
-    '?', -- File
-    '?', -- Reference
-    '?', -- Folder
-    '?', -- EnumMember
-    '?', -- Constant
-    '?', -- Struct
-    '?', -- Event
-    '?', -- Operator
-    '?', -- TypeParameter
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'ﬦ', -- Operator
+    '', -- TypeParameter
   }
 end
 
@@ -159,7 +159,7 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
   init_options = {
     linters = {
       eslint = {
@@ -213,7 +213,6 @@ nvim_lsp.diagnosticls.setup {
       typescript = 'prettier',
       typescriptreact = 'prettier',
       json = 'prettier',
-      markdown = 'prettier',
     }
   }
 }
