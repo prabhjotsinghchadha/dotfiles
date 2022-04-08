@@ -3,6 +3,7 @@ if !exists('g:loaded_telescope') | finish | endif
 nnoremap  <silent> ;f <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap  <silent> ;r <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap  <silent> ;b <cmd>lua require('telescope.builtin').file_browser()<cr>
+nnoremap  <silent> ;c <cmd>lua require('telescope.builtin').colorscheme()<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
 

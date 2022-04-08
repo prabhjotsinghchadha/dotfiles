@@ -59,3 +59,9 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
+
+let g:floaterm_keymap_new = '<Leader>ft'
+let g:floaterm_keymap_show = '<Leader>fs'
+let g:floaterm_keymap_hide = '<Leader>fh'
+let g:floaterm_keymap_kill = '<Leader>fk'
+

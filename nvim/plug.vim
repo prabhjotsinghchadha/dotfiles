@@ -41,6 +41,7 @@ endif
 
 " Plug 'w0rp/ale'
 " Plug 'preservim/nerdtree'
+Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx','typescript'], 'do': 'make install' }
 Plug 'jremmen/vim-ripgrep'
 Plug 'ayu-theme/ayu-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
@@ -56,5 +57,6 @@ Plug 'morhetz/gruvbox'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'rust-lang/rust.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
