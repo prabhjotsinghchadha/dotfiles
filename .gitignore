@@ -78,3 +78,7 @@ fish_variables
 .config/fish/fish_variables
 # Karabiner
 .config/karabiner/automatic_backups
+valet
+shopify
+yarn
+yarn/global

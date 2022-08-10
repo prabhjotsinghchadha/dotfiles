@@ -9,6 +9,7 @@ EOF
 lua << EOF
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
+local lsp_installer = require("nvim-lsp-installer")
 
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
@@ -83,7 +84,17 @@ local on_attach = function(client, bufnr)
   }
 end
 
+require'cmp'.setup {
+  sources = {
+    { name = 'nvim_lsp' }
+  }
+}
 
+lsp_installer.on_server_ready(function(server)
+local opts = {}
+    server:setup(opts)
+end
+)
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
@@ -153,7 +164,7 @@ cmd = {"vscode-json-language-server", "--stdio"},
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "javascript","typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
 

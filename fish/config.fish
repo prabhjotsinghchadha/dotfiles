@@ -72,3 +72,5 @@ if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
 end
 test -e /Users/prabhjot/.iterm2_shell_integration.fish ; and source /Users/prabhjot/.iterm2_shell_integration.fish ; or true
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
