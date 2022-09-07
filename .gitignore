@@ -82,3 +82,9 @@ valet
 shopify
 yarn
 yarn/global
+bpytop/error.log
+yarn
+yarn/global/node_modules
+bpytop
+yarn
+yarn/global/node_modules
