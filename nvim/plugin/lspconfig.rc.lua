@@ -54,7 +54,7 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
@@ -65,12 +65,16 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript","javascript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript","javascript","javascriptreact", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
 
 nvim_lsp.sourcekit.setup {
+  on_attach = on_attach,
+}
+
+nvim_lsp.prismals.setup {
   on_attach = on_attach,
 }
 
