@@ -1,5 +1,4 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
-local path               = require("path")
 if not cmp_status_ok then
   return
 end
