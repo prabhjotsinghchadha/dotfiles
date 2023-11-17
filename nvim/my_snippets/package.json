@@ -10,9 +10,9 @@
 			},
 			{
 				"language": [
-					"lua"
+					"javascript"
 				],
-				"path": "./lua.json"
+				"path": "./snippets/javascript.json"
 			}
 		]
 	}

@@ -26,7 +26,9 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+ 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+
+  use 'nvimdev/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' 
   use 'rafamadriz/friendly-snippets' --Snippet 
   use 'saadparwaiz1/cmp_luasnip'
@@ -37,8 +39,21 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use { 'sudormrfbin/cheatsheet.nvim',
+  requires = {
+    {'nvim-telescope/telescope.nvim'},
+    {'nvim-lua/popup.nvim'},
+    {'nvim-lua/plenary.nvim'},
+  }
+}
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use { 'numToStr/Comment.nvim',
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring'
+    }
+  }
+ -- use 'KarimElghamry/vim-auto-comment'
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/zen-mode.nvim'
   use({
@@ -48,10 +63,13 @@ packer.startup(function(use)
   use 'akinsho/nvim-bufferline.lua'
   -- use 'github/copilot.vim'
 
+  use 'mfussenegger/nvim-dap'
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
   use 'tpope/vim-fugitive' --For git commit
+  use 'tpope/vim-rhubarb'
 
   use { "NTBBloodbath/rest.nvim",
   requires = { "nvim-lua/plenary.nvim" } }
+  use 'jparise/vim-graphql'
 end)

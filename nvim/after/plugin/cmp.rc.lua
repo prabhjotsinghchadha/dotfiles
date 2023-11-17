@@ -8,7 +8,9 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load({paths = "../../my_snippets"})
+require("luasnip/loaders/from_vscode").lazy_load()
+
+local compare = require('cmp.config.compare')
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -105,7 +107,21 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        cmp_tabnine = "[TN]",
       })[entry.source.name]
+      if entry.source.name == "cmp_tabnine" then
+	 			local detail = (entry.completion_item.data or {}).detail
+	 			vim_item.kind = ""
+	 			if detail and detail:find('.*%%.*') then
+	 				vim_item.kind = vim_item.kind .. ' ' .. detail
+	 			end
+
+	 			if (entry.completion_item.data or {}).multiline then
+	 				vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
+	 			end
+	 		end
+	 		local maxwidth = 80
+	 		vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
       return vim_item
     end,
   },
@@ -114,6 +130,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "cmp_tabnine"}
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -126,5 +143,19 @@ cmp.setup {
   experimental = {
     ghost_text = false,
     native_menu = false,
+  },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      require('cmp_tabnine.compare'),
+      compare.offset,
+      compare.exact,
+      compare.score,
+      compare.recently_used,
+      compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    },
   },
 }
