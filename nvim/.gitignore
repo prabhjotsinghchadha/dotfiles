@@ -1,0 +1,11 @@
+# Ignore sensitive files
+github-copilot/
+gcloud/
+solana/
+stripe/
+
+# Ignore other common files
+.DS_Store
+node_modules/
+.env
+.env.local 
