@@ -88,3 +88,4 @@ yarn/global/node_modules
 bpytop
 yarn
 yarn/global/node_modules
+bpytop/error.log
