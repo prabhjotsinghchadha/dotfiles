@@ -62,7 +62,7 @@ return {
 
 	-- animations
 	{
-		"echasnovski/mini.animate",
+		"nvim-mini/mini.animate",
 		event = "VeryLazy",
 		opts = function(_, opts)
 			opts.scroll = {
@@ -132,7 +132,9 @@ return {
 			})
 		end,
 	},
-
+	{
+		"ziglang/zig.vim",
+	},
 	{
 		"folke/zen-mode.nvim",
 		cmd = "ZenMode",
