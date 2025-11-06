@@ -1,0 +1,3 @@
+shell-integration = zsh
+cursor-invert-fg-bg = true
+font-size = 20

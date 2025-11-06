@@ -1,91 +1,126 @@
-*.o
-\#*#
-*#
-.#*
-.*~
+# Dotfiles .gitignore
+# This file controls what gets shared publicly
+
+# ============================================
+# SENSITIVE - Never commit these directories
+# ============================================
+
+# Cloud provider credentials and configs
+gcloud/
+firebase/
+stripe/
+solana/
+
+# API keys and tokens
+github-copilot/
+sanity/
+
+# Company/work specific
+shopify/
+crewai/
+
+# Package manager caches and data
+yarn/global/node_modules/
+configstore/
+simple-update-notifier/
+
+# Valet (Laravel development - may contain project paths)
+valet/
+
+# ============================================
+# TEMPORARY/GENERATED FILES
+# ============================================
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
 *~
-.DS_Store
-*.sw[po]
-tags
-TAGS
-.svn
-*.dSYM
+
+# Logs
 *.log
-*.dvi
-*.aux
-*.elc
-.zshrc.local
-.python-version
-samples
-.netrwhist
-.bundle
-/vendor/bundle
-Gemfile.lock
-node_modules
-bower_components
-fishd.*
-hub
+error.log
+debug.log
 
-# Vim
-Session.vim
-.vim/bundle/
-.vimrc_sample
-.vim/ftdetect/Dockerfile.vim
-.vim/syntax/Dockerfile.vim
-.vim/snippets/
-bpytop
+# Backup files
+*.bak
+*.backup
+*.old
+backup.txt
 
-coc
-.DS_Store
-karabiner
+# Temporary files
+*.tmp
+*.temp
+fishd.tmp.*
 
-# Xcode
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-*.xcworkspace/xcshareddata
+# ============================================
+# APPLICATION SPECIFIC
+# ============================================
 
-# CocoaPods
-Pods/
+# Fish shell
+fish/fish_variables
+fish/fishd.*
+fish/.DS_Store
 
-# Atom.io
-.atom/packages/save-session
-.atom/compile-cache
-.atom/storage
+# Neovim
+nvim/lazy-lock.json
+nvim/lazyvim.json
+nvim/.luarc.json
+nvim/*.log
 
-.gitconfig
-gh
-configstore
-htop
+# Karabiner (keyboard customization - may contain personal layouts)
+karabiner/automatic_backups/
+karabiner/.DS_Store
 
-# Fish local config
-.config/fish/config-local.fish
-.config/fish/fish_variables.x86_64
-fish_variables
-.config/fish/fish_variables
-# Karabiner
-.config/karabiner/automatic_backups
-valet
-shopify
-yarn
-yarn/global
+# iTerm2 (may contain personal settings)
+iterm2/
+
+# Ranger (file manager cache)
+ranger/plugins/
+ranger/bookmarks
+ranger/history
+ranger/tagged
+
+# OMF (Oh My Fish - generated files)
+omf/bundle
+omf/theme
+omf/channels/
+
+# BPyTop (system monitor - contains logs)
+bpytop/*.log
 bpytop/error.log
-yarn
-yarn/global/node_modules
-bpytop
-yarn
-yarn/global/node_modules
-bpytop/error.log
+
+# Wallpaper (personal images)
+wallpaper/
+
+# GitHub CLI (may contain tokens)
+gh/
+
+# Neofetch (system info - safe but not needed)
+neofetch/
+
+# ============================================
+# KEEP THESE - Safe to share
+# ============================================
+# The following are explicitly tracked:
+# - nvim/ (Neovim config)
+# - fish/ (Fish shell config - excluding variables)
+# - tmux/ (Terminal multiplexer config)
+# - alacritty/ (Terminal emulator config)
+# - kitty/ (Terminal emulator config)
+# - gitui/ (Git TUI config)
+# - ghostty/ (Terminal emulator config)
+
+# ============================================
+# NOTES
+# ============================================
+# If you want to share additional configs:
+# 1. Review the directory for sensitive info
+# 2. Remove the directory from this .gitignore
+# 3. Add it to git with: git add -f <directory>
