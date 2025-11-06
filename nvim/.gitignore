@@ -1,0 +1,45 @@
+# Neovim specific ignores
+
+# Plugin manager data
+lazy-lock.json
+lazyvim.json
+
+# Lazy.nvim plugin directory (installed plugins)
+# Note: This is typically at ~/.local/share/nvim/lazy/
+# but including here for reference
+
+# Swap files
+*.swp
+*.swo
+*~
+
+# Undo history
+*.un~
+
+# Session files
+Session.vim
+.session
+
+# Netrw history
+.netrwhist
+
+# Log files
+*.log
+
+# Compiled Lua bytecode
+*.luac
+
+# LSP logs
+lsp.log
+lsp-*.log
+
+# Debug files
+.luarc.json
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Personal notes or local configs (if you create them)
+local.lua
+personal.lua

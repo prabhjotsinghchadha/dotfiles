@@ -1,0 +1,143 @@
+# Dotfiles .gitignore
+# This file controls what gets shared publicly
+
+# ============================================
+# SENSITIVE - Never commit these directories
+# ============================================
+
+# Cloud provider credentials and configs
+gcloud/
+firebase/
+stripe/
+solana/
+
+# API keys and tokens
+github-copilot/
+sanity/
+
+# Company/work specific
+shopify/
+crewai/
+
+# Package manager caches and data
+yarn/global/node_modules/
+configstore/
+simple-update-notifier/
+
+# Valet (Laravel development - may contain project paths)
+valet/
+
+# ============================================
+# TEMPORARY/GENERATED FILES
+# ============================================
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+error.log
+debug.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+backup.txt
+
+# Temporary files
+*.tmp
+*.temp
+fishd.tmp.*
+
+# ============================================
+# APPLICATION SPECIFIC
+# ============================================
+
+# Fish shell
+fish/fish_variables
+fish/fishd.*
+fish/.DS_Store
+
+# Neovim
+nvim/lazy-lock.json
+nvim/lazyvim.json
+nvim/.luarc.json
+nvim/*.log
+
+# Karabiner (keyboard customization - may contain personal layouts)
+karabiner/automatic_backups/
+karabiner/.DS_Store
+
+# iTerm2 (may contain personal settings)
+iterm2/
+
+# Ranger (file manager cache)
+ranger/plugins/
+ranger/bookmarks
+ranger/history
+ranger/tagged
+
+# OMF (Oh My Fish - generated files)
+omf/bundle
+omf/theme
+omf/channels/
+
+# BPyTop (system monitor - contains logs)
+bpytop/*.log
+bpytop/error.log
+
+# Wallpaper (personal images)
+wallpaper/
+
+# GitHub CLI (may contain tokens)
+gh/
+
+# Neofetch (system info - safe but not needed)
+neofetch/
+
+# Temporary/old files
+*.zip
+*.json.bak
+vimium_*.json
+hub
+CLEANUP_PLAN.md
+PUSH_TO_GITHUB.md
+DEPLOYMENT_SUMMARY.md
+SHAREABLE_CONFIGS.md
+
+# Root level generated files
+.luarc.json
+
+# ============================================
+# KEEP THESE - Safe to share
+# ============================================
+# The following are explicitly tracked:
+# - nvim/ (Neovim config - excluding lock files)
+# - fish/ (Fish shell config - excluding variables)
+# - tmux/ (Terminal multiplexer config)
+# - alacritty/ (Terminal emulator config)
+# - kitty/ (Terminal emulator config)
+# - ghostty/ (Terminal emulator config)
+# - gitui/ (Git TUI config - excluding old themes)
+# - karabiner/ (Keyboard customization - excluding backups)
+# - bpytop/ (System monitor - excluding logs, keeping themes)
+# - starship.toml (Cross-shell prompt)
+# - README.md (Documentation)
+
+# ============================================
+# NOTES
+# ============================================
+# If you want to share additional configs:
+# 1. Review the directory for sensitive info
+# 2. Remove the directory from this .gitignore
+# 3. Add it to git with: git add -f <directory>
